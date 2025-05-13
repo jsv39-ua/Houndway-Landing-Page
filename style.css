@@ -10,11 +10,11 @@ body {
 header {
   background: #222;
   color: white;
-  text-align: center;
-  padding: 2rem 1rem;
+  text-align: left;
+  padding: 2rem 3rem;
 }
 
-.logo {
+.logo-houndway {
   width: 100px;
 }
 
@@ -28,10 +28,38 @@ section {
   margin: auto;
 }
 
+.galeria-imagenes {
+  display: flex;
+  flex-wrap: wrap; /* Permite que pasen a la siguiente línea si no caben */
+  gap: 20px; /* Espacio entre las imágenes */
+  justify-content: center; /* Centra las imágenes horizontalmente */
+}
+
+.galeria-imagenes figure {
+  width: 550px; /* O el tamaño que desees */
+  margin: 0;
+  text-align: left;
+}
+
 .galeria img {
-  width: 30%;
+  width: 100%;
   margin: 1%;
   border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+figure {
+    text-align: center;
+    margin: 0;
+    flex: 1 1 calc(30% - 1rem);
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: #666;
 }
 
 .testimonios blockquote {
