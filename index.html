@@ -10,49 +10,95 @@
   <header>
     <img src="img/logo.png" alt="Logotipo HoundWay" class="logo-houndway" />
     <h1>HoundWay</h1>
-    <p class="slogan">Tu app de rutas de confianza.</p>
+    
   </header>
 
-  <section class="descripcion">
-    <h2>Sobre Nosotros</h2>
-    <p>En HoundWay te ayudamos a planificar tus rutas de manera eficiente y confiable. Nuestra app está diseñada para ofrecerte la mejor experiencia en tus viajes, ya sea para explorar nuevos lugares o para optimizar tus trayectos diarios.</p>
-  </section>
 
-  <section class="galeria">
-    <h2>Galería</h2>
-        <div class="galeria-imagenes">
-        <figure>
-            <img src="img/foto-ruta.jpeg" alt="Planificar rutas" />
-            <figcaption>Planifica tus rutas de manera eficiente.</figcaption>
-        </figure>
-        <figure>
-            <img src="img/foto-mapa.jpeg" alt="Mapa interactivo" />
-            <figcaption>Explora mapas interactivos para tus viajes.</figcaption>
-        </figure>
-        <figure>
-            <img src="img/foto-autonomia.jpeg" alt="Ajustar autonomia" />
-            <figcaption>Ajusta la autonomía de tus trayectos.</figcaption>
-        </figure>  </section>
-    </div>
+  <div class="container-izquierda">
+    <section class="descripcion">
+      <h2>Sobre Nosotros</h2>
+      <p>En HoundWay te ayudamos a planificar tus rutas de manera eficiente y confiable. Nuestra app está diseñada para ofrecerte la mejor experiencia en tus viajes, ya sea para explorar nuevos lugares o para optimizar tus trayectos diarios
+        Podrás disfrutar de una multitud de funcionalidades como planificación de rutas, búsqueda de estaciones de servicio por precio, registro de rutas, y muchas más. ¡Únete ahora a la comunidad de Houndway y encuentra tu nuevo destino!</p>
+    </section>
 
-  <section class="video">
-    <h2>Presentación del Proyecto</h2>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-  </section>
 
-  <section class="testimonios">
-    <h2>Testimonios</h2>
-    <blockquote>"HoundWay me ayudó a descubrir rutas increíbles que nunca habría encontrado por mi cuenta. ¡Es genial!" – Ana G.</blockquote>
-    <blockquote>"La app es súper intuitiva y me ahorra mucho tiempo al planificar mis viajes. ¡Muy recomendada!" – Carlos M.</blockquote>
-  </section>
 
-  <section class="cta">
-    <h2>¿Listo para explorar?</h2>
-    <a href="https://forms.gle/TuFormulario" class="boton">Descarga la app ahora</a>
-  </section>
+    <section class="testimonios">
+      <h2>Testimonios</h2>
+      <blockquote>"HoundWay me ayudó a descubrir rutas increíbles que nunca habría encontrado por mi cuenta. ¡Es genial!" – Ana G.</blockquote>
+      <blockquote>"La app es súper intuitiva y me ahorra mucho tiempo al planificar mis viajes. ¡Muy recomendada!" – Carlos M.</blockquote>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 HoundWay. Todos los derechos reservados.</p>
-  </footer>
+    <section class="cta">
+      <h2>¿Listo para explorar?</h2>
+      <a href="https://forms.gle/TuFormulario" class="boton">Descarga la app ahora</a>
+    </section>
+
+  </div>
+  <div class="container-derecha">
+
+      <section class="galeria">
+      <h2>Galería</h2>
+          <div class="galeria-imagenes">
+          <figure>
+              <img src="img/foto-ruta.jpeg" alt="Planificar rutas" />
+              <figcaption>Planifica tus rutas de manera eficiente.</figcaption>
+          </figure>
+          <figure>
+              <img src="img/foto-mapa.jpeg" alt="Mapa interactivo" />
+              <figcaption>Explora mapas interactivos para tus viajes.</figcaption>
+          </figure>
+          <figure>
+              <img src="img/foto-autonomia.jpeg" alt="Ajustar autonomia" />
+              <figcaption>Ajusta la autonomía de tus trayectos.</figcaption>
+          </figure>  </section>
+      </div>
+
+    <section class="video">
+      <h2>Presentación del Proyecto</h2>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 HoundWay. Todos los derechos reservados.</p>
+    </footer>
+  </div>
+
+  <div id="modal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modal-img" />
+  </div>
+
+
+  <script>
+    // Selecciona el modal y sus elementos
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".close");
+
+    // Selecciona todas las imágenes de la galería
+    const galleryImages = document.querySelectorAll(".galeria-imagenes img");
+
+    // Añade evento de clic a cada imagen
+    galleryImages.forEach((img) => {
+      img.addEventListener("click", () => {
+        modal.style.display = "block";
+        modalImg.src = img.src; // Muestra la imagen seleccionada
+      });
+    });
+
+    // Cierra el modal al hacer clic en la "X"
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+
+    // Cierra el modal al hacer clic fuera de la imagen
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
+
