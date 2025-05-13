@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>HoundWay</title>
     <link rel="stylesheet" href="style.css">
+
+    <!-- Fuente personalizada-->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+    <!-- SEO básico -->
+    <meta name="description" content="HoundWay es una aplicación que te ayuda a planificar tus rutas de manera eficiente y confiable.">
+    <meta name="keywords" content="HoundWay, rutas, planificación, viajes, app, mapas, estaciones de servicio">
+    <meta name="author" content="NEXA Connection & Technology">
+
+
+    <!-- Para redes sociales-->
+    <meta property="og:title" content="HoundWay - Planifica tus rutas" />
+    <meta property="og:description" content="Descubre la mejor manera de planificar tus rutas con HoundWay. Únete a nuestra comunidad y optimiza tus viajes." />
+    <meta property="og:image" content="img/logo.png" />
+    <meta property="og:url" content="https://www.houndway.com" />
 </head>
 <body>
   <header>
@@ -13,15 +28,28 @@
     
   </header>
 
-
-  <div class="container-izquierda">
     <section class="descripcion">
       <h2>Sobre Nosotros</h2>
       <p>En HoundWay te ayudamos a planificar tus rutas de manera eficiente y confiable. Nuestra app está diseñada para ofrecerte la mejor experiencia en tus viajes, ya sea para explorar nuevos lugares o para optimizar tus trayectos diarios
         Podrás disfrutar de una multitud de funcionalidades como planificación de rutas, búsqueda de estaciones de servicio por precio, registro de rutas, y muchas más. ¡Únete ahora a la comunidad de Houndway y encuentra tu nuevo destino!</p>
     </section>
 
-
+    <section class="galeria">
+    <h2>Galería</h2>
+        <div class="galeria-imagenes">
+        <figure>
+            <img src="img/foto-ruta.jpeg" alt="Planificar rutas" />
+            <figcaption>Planifica tus rutas de manera eficiente.</figcaption>
+        </figure>
+        <figure>
+            <img src="img/foto-mapa.jpeg" alt="Mapa interactivo" />
+            <figcaption>Explora mapas interactivos para tus viajes.</figcaption>
+        </figure>
+        <figure>
+            <img src="img/foto-autonomia.jpeg" alt="Ajustar autonomia" />
+            <figcaption>Ajusta la autonomía de tus trayectos.</figcaption>
+        </figure>  </section>
+    </div>
 
     <section class="testimonios">
       <h2>Testimonios</h2>
@@ -34,41 +62,13 @@
       <a href="https://forms.gle/TuFormulario" class="boton">Descarga la app ahora</a>
     </section>
 
-  </div>
-  <div class="container-derecha">
-
-      <section class="galeria">
-      <h2>Galería</h2>
-          <div class="galeria-imagenes">
-          <figure>
-              <img src="img/foto-ruta.jpeg" alt="Planificar rutas" />
-              <figcaption>Planifica tus rutas de manera eficiente.</figcaption>
-          </figure>
-          <figure>
-              <img src="img/foto-mapa.jpeg" alt="Mapa interactivo" />
-              <figcaption>Explora mapas interactivos para tus viajes.</figcaption>
-          </figure>
-          <figure>
-              <img src="img/foto-autonomia.jpeg" alt="Ajustar autonomia" />
-              <figcaption>Ajusta la autonomía de tus trayectos.</figcaption>
-          </figure>  </section>
-      </div>
-
-    <section class="video">
-      <h2>Presentación del Proyecto</h2>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0" allowfullscreen></iframe>
-    </section>
-
-    <footer>
+      <footer>
       <p>&copy; 2025 HoundWay. Todos los derechos reservados.</p>
-    </footer>
-  </div>
-
+  </footer>
   <div id="modal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="modal-img" />
   </div>
-
 
   <script>
     // Selecciona el modal y sus elementos
@@ -83,19 +83,29 @@
     galleryImages.forEach((img) => {
       img.addEventListener("click", () => {
         modal.style.display = "block";
+        modal.classList.add("show"); // Añade la clase para la animación
         modalImg.src = img.src; // Muestra la imagen seleccionada
+        modalImg.classList.add("show"); // Añade la clase para la animación de la imagen
       });
     });
 
     // Cierra el modal al hacer clic en la "X"
     closeBtn.addEventListener("click", () => {
-      modal.style.display = "none";
+      modal.classList.remove("show"); // Quita la clase para ocultar con animación
+      modalImg.classList.remove("show");
+      setTimeout(() => {
+        modal.style.display = "none"; // Oculta el modal después de la animación
+      }, 500); // Tiempo igual al de la transición en CSS
     });
 
     // Cierra el modal al hacer clic fuera de la imagen
     modal.addEventListener("click", (e) => {
       if (e.target === modal) {
-        modal.style.display = "none";
+        modal.classList.remove("show");
+        modalImg.classList.remove("show");
+        setTimeout(() => {
+          modal.style.display = "none";
+        }, 500);
       }
     });
   </script>

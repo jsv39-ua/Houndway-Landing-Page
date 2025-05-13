@@ -1,11 +1,38 @@
 body {
-  font-family: sans-serif;
+  
   margin: 0;
   padding: 0;
   background: #f9f9f9;
   color: #333;
   line-height: 1.6;
+  font-family: 'Open Sans', sans-serif;
 }
+
+.container-entero {
+  display: flex; /* Activa Flexbox */
+  flex-direction: row; /* Alinea los elementos en una fila horizontal */
+  justify-content: space-between; /* Espacio entre los elementos */
+  align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+  gap: 20px; /* Espaciado entre los contenedores */
+}
+
+.container-izquierda,
+.container-derecha {
+  flex: 1; /* Hace que ambos contenedores ocupen el mismo espacio */
+  max-width: 50%; /* Limita el ancho máximo de cada contenedor */
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.descripcion p {
+
+  font-size: 1.5rem;
+}
+
 
 header {
     display:flex;
@@ -49,6 +76,7 @@ section {
     transform: scale(1.05);
     transition: transform 0.3s ease;
 }
+
 
 
 
@@ -109,7 +137,16 @@ footer {
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro */
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Transición suave */
 }
+
+.modal.show {
+  display: block; /* Muestra el modal */
+  opacity: 1; /* Hace el modal visible */
+}
+
+
 
 .modal-content {
   margin: auto;
@@ -118,7 +155,13 @@ footer {
   max-height: 80%;
   border-radius: 8px;
   padding: 100px;
+  transform: scale(0.9);
+  transition: transform 0.3s ease; /* Transición suave */
   
+}
+
+.modal-content.show {
+  transform: scale(1); /* Escala el contenido al mostrarlo */
 }
 
 .close {
