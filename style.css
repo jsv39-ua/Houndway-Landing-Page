@@ -1,0 +1,59 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.logo {
+  width: 100px;
+}
+
+.slogan {
+  font-style: italic;
+}
+
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.galeria img {
+  width: 30%;
+  margin: 1%;
+  border-radius: 8px;
+}
+
+.testimonios blockquote {
+  background: #eee;
+  padding: 1rem;
+  border-left: 5px solid #888;
+  margin: 1rem 0;
+}
+
+.boton {
+  display: inline-block;
+  background: #e91e63;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
