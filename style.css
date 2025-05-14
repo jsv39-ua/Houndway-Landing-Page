@@ -50,6 +50,10 @@ header {
   width: 100px;
 }
 
+.nexa-logo {
+  width: 250px;
+}
+
 .slogan {
   font-style: italic;
 }
@@ -187,3 +191,43 @@ footer {
   text-decoration: none;
   cursor: pointer;
 }
+
+
+.acordeon {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem 1rem;
+  background: #fff;
+  border-radius: 8px;
+ 
+}
+
+
+.acordeon-boton {
+      background: rgba(17,103,130,255);
+      color: white;
+      padding: 1rem 1.5rem;
+      font-size: 1.5rem;
+      font-weight: bold;
+      border: none;
+      width: 100%;
+      text-align: left;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+.acordeon-titulo:hover {
+      background: rgba(17,103,130,200);
+    }
+
+.acordeon-contenido {
+      display: none;
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+.acordeon-contenido.mostrar {
+      display: block;
+    }

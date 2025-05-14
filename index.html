@@ -11,7 +11,7 @@
 
     <!-- SEO básico -->
     <meta name="description" content="HoundWay es una aplicación que te ayuda a planificar tus rutas de manera eficiente y confiable.">
-    <meta name="keywords" content="HoundWay, rutas, planificación, viajes, app, mapas, estaciones de servicio">
+    <meta name="keywords" content="HoundWay, rutas, planificación, viajes, app, mapas, estaciones de servicio, aplicación">
     <meta name="author" content="NEXA Connection & Technology">
 
 
@@ -54,7 +54,22 @@
     <section class="testimonios">
       <h2>Testimonios</h2>
       <blockquote>"HoundWay me ayudó a descubrir rutas increíbles que nunca habría encontrado por mi cuenta. ¡Es genial!" – Ana G.</blockquote>
-      <blockquote>"La app es súper intuitiva y me ahorra mucho tiempo al planificar mis viajes. ¡Muy recomendada!" – Carlos M.</blockquote>
+      <blockquote>"La app es súper intuitiva y me ahorra mucho tiempo al planificar mis viajes. ¡Muy recomendada!" – Boney M.</blockquote>
+      <blockquote>"Lo que más me llamo la atención fue su diseño de interfaz responsiva, muy cómodo la verdad." – Carlos S.</blockquote>
+
+    </section>
+
+    <section class="acordeon">
+      <button class="acordeon-boton" onclick="mostrarOcultar()">🔽 ¿Quiénes somos?</button>
+
+      <div class="acordeon-contenido" id="contenido">
+        <p>
+          Somos una organización dedicada a brindar soluciones tecnológicas innovadoras.<br>
+          Nuestro equipo está compuesto por profesionales comprometidos con la calidad y el servicio.
+          En NEXA, creemos en la importancia de la tecnología para mejorar la vida de las personas y facilitar su día a día.          
+        </p>
+        <img class="nexa-logo" src="img/nexa_logo.png" alt="Logotipo NEXA" />
+      </div>
     </section>
 
     <section class="cta">
@@ -62,40 +77,44 @@
       <a href="https://forms.gle/TuFormulario" class="boton">Descarga la app ahora</a>
     </section>
 
-      <footer>
+
+
+    <footer>
       <p>&copy; 2025 NEXA. Todos los derechos reservados.</p>
-  </footer>
+    </footer>
+
+
   <div id="modal" class="modal">
     <span class="close">&times;</span>
     <img class="modal-content" id="modal-img" />
   </div>
 
   <script>
-    // Selecciona el modal y sus elementos
+    
     const modal = document.getElementById("modal");
     const modalImg = document.getElementById("modal-img");
     const closeBtn = document.querySelector(".close");
 
-    // Selecciona todas las imágenes de la galería
+    
     const galleryImages = document.querySelectorAll(".galeria-imagenes img");
 
-    // Añade evento de clic a cada imagen
+    
     galleryImages.forEach((img) => {
       img.addEventListener("click", () => {
         modal.style.display = "block";
-        modal.classList.add("show"); // Añade la clase para la animación
-        modalImg.src = img.src; // Muestra la imagen seleccionada
-        modalImg.classList.add("show"); // Añade la clase para la animación de la imagen
+        modal.classList.add("show"); 
+        modalImg.src = img.src; 
+        modalImg.classList.add("show"); 
       });
     });
 
     // Cierra el modal al hacer clic en la "X"
     closeBtn.addEventListener("click", () => {
-      modal.classList.remove("show"); // Quita la clase para ocultar con animación
+      modal.classList.remove("show");
       modalImg.classList.remove("show");
       setTimeout(() => {
-        modal.style.display = "none"; // Oculta el modal después de la animación
-      }, 500); // Tiempo igual al de la transición en CSS
+        modal.style.display = "none"; 
+      }, 500); 
     });
 
     // Cierra el modal al hacer clic fuera de la imagen
@@ -108,6 +127,17 @@
         }, 500);
       }
     });
+
+    function mostrarOcultar() {
+      const contenido = document.getElementById('contenido');
+      if (contenido.style.display === "none") {
+        contenido.style.display = "block";
+      } else {
+        contenido.style.display = "none";
+      }
+    }
+
+  
   </script>
 </body>
 </html>
